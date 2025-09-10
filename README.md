@@ -4,7 +4,7 @@ This is the README documentation for the Password Security Lab, produced and mai
 
 ## Quick Start
 
-Want to jump into the lab? Navigate to the [Part 0 Instructions](./lab_part0.md) to get started!
+Want to jump into the lab? Navigate to the [Part 0 Instructions](./lab/lab_part0.md) to get started!
 
 ## About this Lab
 
