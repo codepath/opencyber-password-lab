@@ -6,7 +6,7 @@
 
 **Tools Needed:** `john`, `less`, `wget` (these are already installed for you!)
 
-**[Back to home](./instructions.md)**
+**[Back to home](https://github.com/codepath/opencyber-password-lab)**
 
 ## Instructions
 

@@ -6,7 +6,7 @@
 
 **Tools Needed:** Docker, make
 
-**[Back to home](./instructions.md)**
+**[Back to home](https://github.com/codepath/opencyber-password-lab)**
 
 ## Instructions
 
