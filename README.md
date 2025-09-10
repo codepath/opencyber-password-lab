@@ -8,6 +8,8 @@ Want to jump into the lab? Navigate to the [Part 0 Instructions](./lab/lab_part0
 
 ## About this Lab
 
+![Screenshot of provided Docker Container running](https://i.imgur.com/Esf7r3S.png)
+
 The Password Security Lab is designed to teach you about password security, cracking techniques, and the tools used in the industry. You'll gain hands-on experience with real-world scenarios and learn how passwords can be compromised. This will help you understand the importance of strong passwords and secure authentication methods.
 
 ### Learning Objectives
@@ -25,8 +27,6 @@ The Password Security Lab is designed to teach you about password security, crac
 4. [Challenge: Crack the Leaked Passwords (1000 passwords!)](./lab/lab_part3.md)
 
 ## Technical Details
-
-![Screenshot of provided Docker Container running](https://i.imgur.com/HSix2ob.png)
 
 ### Provided Tools
 
