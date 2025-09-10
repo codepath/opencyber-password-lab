@@ -19,10 +19,10 @@ The Password Security Lab is designed to teach you about password security, crac
 
 ### Lab Activities
 
-0. Set up the lab environment using Docker.
-1. Learn: Password Cracking 101
-2. Apply: Crack a Small File (4 passwords)
-3. Challenge: Crack the Leaked Passwords (1000 passwords!)
+1. [Set up the lab environment using Docker.](./lab/lab_part0.md)
+2. [Learn: Password Cracking 101](./lab/lab_part1.md)
+3. [Apply: Crack a Small File (4 passwords)](./lab/lab_part2.md)
+4. [Challenge: Crack the Leaked Passwords (1000 passwords!)](./lab/lab_part3.md)
 
 ## Technical Details
 

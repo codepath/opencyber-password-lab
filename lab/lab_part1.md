@@ -1,4 +1,15 @@
-# Part 1 | Learn: Password Cracking 101
+# Password Security Lab: Part 1
+
+[*(back to home)*](https://github.com/codepath/opencyber-password-lab)
+
+Lab Parts:
+
+1. [Set up the lab environment using Docker.](./lab/lab_part0.md)
+2. [Learn: Password Cracking 101](./lab/lab_part1.md) (✅ You are here!)
+3. [Apply: Crack a Small File (4 passwords)](./lab/lab_part2.md)
+4. [Challenge: Crack the Leaked Passwords (1000 passwords!)](./lab/lab_part3.md)
+
+## Part 1 | Learn: Password Cracking 101
 
 **Estimated Time:** 45 minutes
 
@@ -6,7 +17,7 @@
 
 **Tools Needed:** `john`, `less`, `wget` (these are already installed for you!)
 
-**[Back to home](./instructions.md)**
+**[Back to home](https://github.com/codepath/opencyber-password-lab)**
 
 ## Instructions
 
@@ -297,4 +308,4 @@ Finally, we can see all the different sessions you have, both the ones you abort
 $ john --status
 ```
 
-Thanks for reading! Check out [Part 2](lab/lab_part2.md) of this lab for a new password cracking challenge!
+Thanks for reading! Check out [Part 2](./lab_part2.md) of this lab for a new password cracking challenge!
