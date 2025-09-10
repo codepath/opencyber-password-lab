@@ -26,6 +26,8 @@ The Password Security Lab is designed to teach you about password security, crac
 
 ## Technical Details
 
+![Screenshot of provided Docker Container running](https://i.imgur.com/HSix2ob.png)
+
 ### Provided Tools
 
 In the provided Docker container, you will find all the necessary tools and dependencies pre-installed. This includes:
