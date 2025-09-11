@@ -1,6 +1,6 @@
 # Password Security Lab
 
-This is the README documentation for the Password Security Lab, produced and maintained by [[CodePath.org]].
+This is the README documentation for the Password Security Lab, produced and maintained by [CodePath.org](https://codepath.org).
 
 ## Quick Start
 
