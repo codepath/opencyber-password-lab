@@ -34,6 +34,7 @@ In the provided Docker container, you will find all the necessary tools and depe
 
 - `bash` - A Unix shell and command language (this is how you will interact with the container)
 - John the Ripper (`john`) - A password cracking tool, and the main focus of this lab
+- `mkpasswd` - A utility for generating password hashes
 - `less` - A text file viewer
 - `wget` - A utility for downloading files from the web
 - `unzip` - A utility for extracting compressed files

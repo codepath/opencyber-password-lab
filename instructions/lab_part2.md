@@ -15,7 +15,7 @@ Lab Parts:
 
 **Environment:** Our provided docker container (see [Part 0](./lab_part0.md) for setup instructions)
 
-**Tools Needed:** `john`, `less`, `wget` (these are already installed for you!)
+**Tools Needed:** `john`, `less`, `wget`, `mkpasswd` (these are already installed for you!)
 
 **[Back to home](https://github.com/codepath/opencyber-password-lab)**
 
