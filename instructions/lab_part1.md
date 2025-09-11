@@ -293,7 +293,7 @@ If you want to view all passwords in John's memory, you'll need to look inside t
 
 - [ ] Try using `less` to view all passwords in `/opt/john/run/john.pot`.
 
-Another important file is the configuration file `john.conf` (also located in `/snap/john-the-ripper/610/run/john.conf`).  
+Another important file is the configuration file `john.conf` (also located in `/opt/john/run/john.conf`).  
 
 - You don't need to edit it for this lab, but in a real-world pen-testing environment, you might make tweaks to `john.conf` to optimize your workflow.
 - For example, you could:
