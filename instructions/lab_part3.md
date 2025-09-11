@@ -31,16 +31,16 @@ Your task is simple: Crack as many hashes as possible, so those passwords can be
 > [!IMPORTANT]
 > To help guide your cracking efforts, you've been provided with some metadata about the leaked passwords. This metadata can help you prioritize your cracking efforts by focusing on the most common password lengths and likely words used.
 >
-> <img src="https://i.imgur.com/V9LwokA.png" style="width: 60%; min-width: 350px;" alt="cp_leak.txt inforgraphic, stating primary user language is English and a histogram showing frequency of password lengths (2, 13, 87, 284, 487, 107, 18, and 2 passwords of lengths 1, 2, 3, 4, 5, 6, 7, 8, respectively)."></img>
+> <img src="https://i.imgur.com/ZZ9mszz.png" style="width: 60%; min-width: 350px;" alt="password_leak.txt inforgraphic, stating primary user language is English and a histogram showing frequency of password lengths (2, 13, 87, 284, 487, 107, 18, and 2 passwords of lengths 1, 2, 3, 4, 5, 6, 7, 8, respectively)."></img>
 
 ### Challenge Goal
 
-- [ ] Your goal is to crack hashes in the `cp_leak.txt` file on your Docker container, using what you learned in [Part 1](./lab_part1.md) and [Part 2](./lab_part2.md).
-- [ ] There are 1000 hashes in `cp_leak.txt`, but completion of this challenge requires you to crack 25%, or 250 passwords.
+- [ ] Your goal is to crack hashes in the `password_leak.txt` file on your Docker container, using what you learned in [Part 1](./lab_part1.md) and [Part 2](./lab_part2.md).
+- [ ] There are 1000 hashes in `password_leak.txt`, but completion of this challenge requires you to crack 25%, or 250 passwords.
   - [ ] For each additional 25% cracked, you'll earn 1 bonus point.
 
 > [!TIP]
-> To check how many passwords you've cracked so far, run `john --show cp_leak.txt`
+> To check how many passwords you've cracked so far, run `john --show password_leak.txt`
 
 
 > [!WARNING]

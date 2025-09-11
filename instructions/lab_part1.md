@@ -113,7 +113,7 @@ Awesome!  We have the `rockyou.txt` wordlist, which is what real-world password 
 
 ```bash
 student@containerid:~$ ls
-crackfiles.zip  rockyou.txt  cp_leak.txt
+crackfiles.zip  rockyou.txt  password_leak.txt
 ```
 
 - [ ] Run the following command: `less -N ./rockyou.txt`
