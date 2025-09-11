@@ -4,10 +4,10 @@
 
 Lab Parts:
 
-1. [Set up the lab environment using Docker.](./lab_part0.md)
-2. [Learn: Password Cracking 101](./lab_part1.md)
-3. [Apply: Crack a Small File (4 passwords)](./lab_part2.md) (✅ You are here!)
-4. [Challenge: Crack the Leaked Passwords (1000 passwords!)](./lab_part3.md)
+0. [Set up the lab environment using Docker.](./lab_part0.md)
+1. [Learn: Password Cracking 101](./lab_part1.md)
+2. [Apply: Crack a Small File (4 passwords)](./lab_part2.md) (✅ You are Here!)
+3. [Challenge: Crack the Leaked Passwords (1000 passwords!)](./lab_part3.md)
 
 ## Part 2 | Apply: Crack a Small File (4 passwords)
 
