@@ -1,0 +1,3 @@
+pinball:$1$TwBRwnTE$2tRaLp5JdtyaYbjIVyV6T1
+pacman:$1$z4a3R8av$ilYc14./NaDjbQFDAAJ9s/
+frogger:$1$v25BfBdH$7.ODmtSUTBcK.2aHjyo4k/

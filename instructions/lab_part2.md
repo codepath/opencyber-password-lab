@@ -23,7 +23,7 @@ Lab Parts:
 
 A challenger approaches!
 
-For this challenge, you'll need to crack the password hashes provided in `crackChallenge.txt`. There are four users to crack:
+For this challenge, you'll need to crack the password hashes provided in `crack_challenge.txt`. There are four users to crack:
 - 🦜 Birb (easy)
 - 🐶 Pupper (medium)
 - 🐱 Kitty (hard)
@@ -33,8 +33,7 @@ Try your best!  All the tools you need are at your fingertips!
 
 ### Guidance
 
-- [ ] If you haven't already, from your Docker container, run `unzip crackfiles.zip`.
-- [ ] Take a look at the `crackChallenge.txt` file to see the hashes you need to crack.
+- [ ] Take a look at the `part2/crack_challenge.txt` file to see the hashes you need to crack.
 - [ ] Think back to what you learned in [Part 1](./lab_part1.md) - you have the tools to crack these hashes!
 
 ### Password File Hints
@@ -49,7 +48,7 @@ You should make an honest effort first, but if you've been stuck for more than 2
 
 <details> 
   <summary>🐶 Pupper (medium)</summary>
-  Have you tried looking at the `crackChallenge.txt` file?  What's different about this entry?
+  Have you tried looking at the `crack_challenge.txt` file?  What's different about this entry?
 </details>
 
 <details> 

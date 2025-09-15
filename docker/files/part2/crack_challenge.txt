@@ -1,0 +1,4 @@
+birb:$1$1fXr98J9$6QV.dNVikSY/JIpg5dlU2/
+pupper:$1$QukYXfiF$o4MntFo2e2RFdXDy48Rz/0:1001:1001:walks,,,bacon:/home/pupper:/bin/bash
+kitty:$1$.E0pVuGN$KEuuAJG275k/jkUsDGVU01
+doggo:$1$mVwzeoiU$yp7Z05SigMxw/8KZ/47as0

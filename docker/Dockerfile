@@ -50,9 +50,7 @@ RUN mkdir -p ~/.local/bin && \
 ENV PATH="/home/student/.local/bin:${PATH}"
 
 # 2.6) Preload lab files
-ARG SCRIPTS_REPO="https://raw.githubusercontent.com/codepath/cyb101-vm-setup/main/Files/"
-RUN wget -q "${SCRIPTS_REPO}unit3/crackfiles.zip" -O ~/crackfiles.zip
-RUN wget -q "${SCRIPTS_REPO}unit3/cp_leak.txt"   -O ~/password_leak.txt
+COPY --chown=student:student docker/files/ /home/student/
 
 # 2.7) Set up entrypoint script
 COPY --chmod=755 docker/entrypoint.sh /usr/local/bin/entrypoint.sh

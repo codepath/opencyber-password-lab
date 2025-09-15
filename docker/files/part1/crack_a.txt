@@ -1,0 +1,3 @@
+squirtle:$1$Cm04Zob3$9zlb/8YZpKI5fycqNqlYO.:1001:1001:blastoise,,,water:/home/squirtle:/bin/bash
+charmander:$1$GhG/w/lw$0oLRQ1lXFETQVV6WITlaq1:1001:1001:charizard,,,fire:/home/charmander:/bin/bash
+bulbasaur:$1$zeAdiX0Q$z6HhsCMYV0pdds.ZUrboV0:1001:1001:venusaur,kanto,,grass:/home/charmander:/bin/bash

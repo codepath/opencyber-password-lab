@@ -68,21 +68,15 @@ Since `29da` isn't the same as `6ccf`, you now know I **didn't send the correct 
 
 Alright, let's get started!
 
-- [ ] From your Docker container, run `ls` to **l**i**s**t the files in your directory. Look for the file `crackfiles.zip`.
+- [ ] From your Docker container, run `ls` to **l**i**s**t the files in your directory.
+  - There are two directories we'll need for this: `part1` and `wordlists`.
+- [ ] Run `ls part1`  to view the files in `part1`.
 
-🎯 **Checkpoint 1.1**: You should have located the file `crackfiles.zip` on your Ubuntu VM.
+🎯 **Checkpoint 1.1**: You should see the Part 1 password files: `crack_a.txt`, `crack_b.txt`, and `crack_c.txt`.
 
-Next, go ahead and unzip the folder (you can use the `unzip` command) and take a look at the files created (using `ls`).  You should have:
+As you can probably guess, all of the `crack_x` files are password files! To look at them, you can use the `less` command.  
 
-- `crackA.txt`
-- `crackB.txt`
-- `crackC.txt`
-- `crackChallenge.txt`
-- `lower.lst`
-
-As you can probably guess, all of the `crackX` files are password files! To look at them, you can use the `less` command.  
-
-- [ ] Try using `less crackA.txt` to view the first password file.  What do you think the fields mean?
+- [ ] Try using `less crack_a.txt` to view the first password file.  What do you think the fields mean?
 
 > [!TIP]
 > Press the `q` key to exit the `less` screen and return to your terminal.
@@ -107,16 +101,16 @@ As you might expect, guessing every possible password could take an infinitely l
 
 In this step, we'll add some popular **wordlists** to our Ubuntu boxes, and explore a bit.  
 
-- [ ] Run the following command: `wget https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt`
+- [ ] Run the following command: `wget https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt -O wordlists/rockyou.txt`
 
-Awesome!  We have the `rockyou.txt` wordlist, which is what real-world password crackers use!  Use the `ls` command to make sure you got the file:
+Awesome!  We have the `rockyou.txt` wordlist, which is what real-world password crackers use!  Use the `ls` command to make sure you added the file to your `wordlists` directory:
 
 ```bash
-student@containerid:~$ ls
-crackfiles.zip  rockyou.txt  password_leak.txt
+student@containerid:~$ ls wordlists
+lower.lst  rockyou.txt
 ```
 
-- [ ] Run the following command: `less -N ./rockyou.txt`
+- [ ] Run the following command: `less -N wordlists/rockyou.txt`
   - (The `-N` flag makes line numbers show up.  If you don't want line numbers, you can run `less` without it.)
 
 > [!TIP]
@@ -147,7 +141,7 @@ Now it's your turn!'
 > If you choose to search for your own password, make sure no one else can see your screen!  
 
 > [!NOTE]
-> For this lab, we're not going to use `rockyou.txt`.  Why?  Because it's **big**, and takes a **long time** to run.  Instead, we'll use a much smaller wordlist, the provided `lower.lst`.  Feel free to check it out too with `less -N lower.lst`!
+> For this lab, we're not going to use `rockyou.txt`.  Why?  Because it's **big**, and takes a **long time** to run.  Instead, we'll use a much smaller wordlist, the provided `lower.lst`.  Feel free to check it out too with `less -N wordlists/lower.lst`!
 
 🎯 **Checkpoint 2**: We know where our wordlists are, and have taken a peek inside them!
 
@@ -163,7 +157,7 @@ This is the step you've been waiting for!  It's time to crack the passwords in t
 
 -----
 
-**SINGLE CRACK MODE (`crackA.txt`)** 
+**SINGLE CRACK MODE (`crack_a.txt`)** 
 
 Single crack is a mode that uses information about the user (stored in [the GECOS fields](https://en.wikipedia.org/wiki/Gecos_field)) to make educated guesses about the password.  
 - For example, if the username is admin, single-crack mode will guess passwords like admin, admin1, ADMIN, admin=, etc... 
@@ -172,14 +166,14 @@ GECOS fields aren't commonly used today, but they could also contain information
 - If this data exists, John will use elements from all these fields to make guesses. 
 
 ✏️ Your turn!
-- [ ] First, take a look at `crackA.txt`.  What additional data do you see for users `squirtle`, `charmander`, and `bulbasaur`?
-- [ ] Now let's try running John in single crack mode: `john --single crackA.txt`
+- [ ] First, take a look at `crack_a.txt`.  What additional data do you see for users `squirtle`, `charmander`, and `bulbasaur`?
+- [ ] Now let's try running John in single crack mode: `john --single part1/crack_a.txt`
   - Did the passwords crack?
-  
+
 Successful cracking will look something like this, except... we've censored the last two passwords!
 
 ```bash
-codepath@lab000001:~$ john -single crackA.txt 
+student@containerid:~$ john -single part1/crack_a.txt 
 Using default input encoding: UTF-8
 Loaded 3 password hashes with 3 different salts (md5crypt, crypt(3) $1$ (and variants) [MD5 512/512 AVX512BW 16x3])
 Press 'q' or Ctrl-C to abort, almost any other key for status
@@ -188,23 +182,26 @@ waterSquirtle    (squirtle)
 ██████████       (bulbasaur)    
 ```
 
-🎯 **Checkpoint 3**: You should have successfully all three pokemon's passwords!   Run `john --show crackA.txt` to view them.
+> [!IMPORTANT]
+> When you run commands, you have to specify the **path** to find each file. So if you want to run John against `crack_a.txt`, and you're in your home directory `~`, you have to use `part1/crack_a.txt`. If you've `cd`'d into the `part1` directory, you can just use `crack_a.txt`. If you're unsure where you are, you can use `pwd`, or just run `cd ~` to return to your home directory.
+
+🎯 **Checkpoint 3**: You should have successfully all three pokemon's passwords!   Run `john --show part1/crack_a.txt` to view them.
 
 Okay, but what about one of our other files?  🤔
-- [ ] Try running John in single crack mode against `crackB.txt`
+- [ ] Try running John in single crack mode against `crack_b.txt`
   - (If you open this file, you'll notice there's no GECOS field data!)
 
 Uh oh!  We may need something fancier for this one...
 
 -----
 
-**WORDLIST MODE (`crackB.txt`)**
+**WORDLIST MODE (`crack_b.txt`)**
 
 Let's bring back the wordlists from step 2!  John's **wordlist mode** will take any wordlist as a dictionary and try every password in there.  (It will also do basic *mangling*, trying different mixes of upper/lowercase letters, etc.)
 
-**🔑 Jim**'s password is crackable with the wordlist directly. Let's start with that:
+**🔑 Jim**'s password is crack_able with the wordlist directly. Let's start with that:
 
-- [ ] `john --wordlist=lower.lst crackB.txt`
+- [ ] `john --wordlist=wordlists/lower.lst part1/crack_b.txt`
 
 Ugh.... this is taking FOREVER.  What if my laptop dies, I have something else to do, etcetera?
 
@@ -215,18 +212,18 @@ Ugh.... this is taking FOREVER.  What if my laptop dies, I have something else t
 If all goes well, you should crack one of the passwords!  (Oh, Jim...)  But there are three passwords in the file.  To get the other passwords, we'll need to add some *mangling rules*:
 
 **🔑 Dwight** used some [l33tspeak](https://en.wikipedia.org/wiki/Leet), which we can check for with `--rules=l33t`
-- [ ] `john --wordlist=lower.lst crackB.txt --rules=l33t`
+- [ ] `john --wordlist=lower.lst part1/crack_b.txt --rules=l33t`
   - Once it cracks, go ahead and stop `john`.
 
 **🔑 Pam** tried mixing up her lower and upper case letters.  
-- [ ]  `john --wordlist=lower.lst crackB.txt --rules=shifttoggle`
+- [ ] `john --wordlist=lower.lst part1/crack_b.txt --rules=shifttoggle`
   - Sneaky, Pam, but we still got it!
 
-🎯 **Checkpoint 4**: You should have successfully cracked Jim, Dwight, and Pam's passwords!   Run `john --show crackB.txt` to view them.
+🎯 **Checkpoint 4**: You should have successfully cracked Jim, Dwight, and Pam's passwords!   Run `john --show part1/crack_b.txt` to view them.
 
 -----
 
-**INCREMENTAL MODE (`crackC.txt`)**
+**INCREMENTAL MODE (`crack_c.txt`)**
 
 Finally, there's incremental. This mode is the most powerful... but also the most slow.
 
@@ -235,11 +232,11 @@ Have you ever tried to guess someone's PIN number by just trying things? *1111, 
 - To speed things up, we can make some educated guesses about how people *usually* construct their passwords.
 
 **🔑 `pinball`**: This password is strictly **numeric** and **4-6 digits long**.
-- [ ] `john --incremental=digits --min-length=4 --max-length=6 crackC.txt`
+- [ ] `john --incremental=digits --min-length=4 --max-length=6 part1/crack_c.txt`
 - [ ] Once `pinball` cracks, stop John with <kbd>q</kbd>
 
 **🔑 `pacman`**: This password follows a common pattern: A number, an uppercase letter, and some lowercase letters.  To do this, we'll use a mask. 
-- [ ] `john --mask=?d?u?l?l crackC.txt`
+- [ ] `john --mask=?d?u?l?l part1/crack_c.txt`
   - Where '?u' represents an uppercase letter, '?l' represents a lowercase letter, and '?d' is a digit.  
 - [ ] Once `pacman` cracks, you can stop John if it's not done yet.
 
@@ -248,10 +245,10 @@ Have you ever tried to guess someone's PIN number by just trying things? *1111, 
 
 <details> 
   <summary>💡 Stuck?</summary>
-  Try this:  `john --mask=?l?l?l?l?d! crackC.txt`
+  Try this:  `john --mask=?l?l?l?l?d! crack_c.txt`
 </details>
 
-🎯 **Checkpoint 5**: You should have successfully cracked all the games' passwords!   Run `john --show crackC.txt` to view them.
+🎯 **Checkpoint 5**: You should have successfully cracked all the games' passwords!   Run `john --show part1/crack_c.txt` to view them.
 
 For more information on masking, check out: https://www.openwall.com/john/doc/RULES.shtml
 
@@ -276,7 +273,7 @@ It will try the following, in order, until it is successful:
 This is the simplest mode to invoke.  Simply run:
 
 ```bash
-$ john crackA.txt
+student@containerid:~$ john part1/crack_a.txt
 ```
 
 This mode can be useful, but it may not be optimal if you already have some information about the password(s) in question!
@@ -286,7 +283,7 @@ This mode can be useful, but it may not be optimal if you already have some info
 We've already seen that John stores cracked passwords.  To check what we've already cracked for a file, we can use the `--show` option when we run John:
 
 ```bash
-$ john --show crackA.txt
+student@containerid:~$ john --show part1/crack_a.txt
 ```
 
 If you want to view all passwords in John's memory, you'll need to look inside the John installation `/opt/john/run`.
@@ -301,11 +298,5 @@ Another important file is the configuration file `john.conf` (also located in `/
   - use only idle time on your system so it's not bogging it down when you need to do something else
   - make it save its bookmark more or less frequently
   - have it beep if you find a password!
-
-Finally, we can see all the different sessions you have, both the ones you aborted early and any that are still running:
-
-```bash
-$ john --status
-```
 
 Thanks for reading! Check out [Part 2](./lab_part2.md) of this lab for a new password cracking challenge!

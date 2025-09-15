@@ -35,12 +35,12 @@ Your task is simple: Crack as many hashes as possible, so those passwords can be
 
 ### Challenge Goal
 
-- [ ] Your goal is to crack hashes in the `password_leak.txt` file on your Docker container, using what you learned in [Part 1](./lab_part1.md) and [Part 2](./lab_part2.md).
+- [ ] Your goal is to crack hashes in the `part3/password_leak.txt` file on your Docker container, using what you learned in [Part 1](./lab_part1.md) and [Part 2](./lab_part2.md).
 - [ ] There are 1000 hashes in `password_leak.txt`, but completion of this challenge requires you to crack 25%, or 250 passwords.
   - [ ] For each additional 25% cracked, you'll earn 1 bonus point.
 
 > [!TIP]
-> To check how many passwords you've cracked so far, run `john --show password_leak.txt`
+> To check how many passwords you've cracked so far, run `john --show part3/password_leak.txt`
 
 
 > [!WARNING]
