@@ -1,5 +1,5 @@
 # Image names
-FINAL_IMAGE=codepath-password-lab:student
+FINAL_IMAGE=opencyber-password-lab:latest
 
 # Default target: build the final image
 all: student
@@ -19,3 +19,7 @@ run:
 # Clean up dangling images (optional)
 clean:
 	docker image prune -f
+
+# Run the image from GitHub Container Registry
+ghcr:
+	docker run --rm -it ghcr.io/codepath/$(FINAL_IMAGE)

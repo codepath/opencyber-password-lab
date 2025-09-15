@@ -21,19 +21,20 @@ Lab Parts:
 
 Follow these steps to set up your lab environment:
 
-1. Make sure you have Docker installed and running in your dev environment.
+- [ ] Make sure you have Docker installed and running in your dev environment.
 
-2. Clone this repository:
-
-```bash
-git clone https://github.com/codepath/opencyber-password-lab.git
-```
-
-1. Use `make build` to build the base Docker image, then `make student` to create the student Docker image.
-
-2. Start the Docker container with `make run`
+- [ ] Run the Lab container with `docker run --rm -it ghcr.io/codepath/opencyber-password-lab:latest`
 
 At this point, you should see a `student@...~$` prompt, indicating that you are inside the Docker container.
 
 If so, you are ready to [**proceed to Part 1**](./lab_part1.md).
 
+> [!TIP]
+> If you have issues, you can build manually by cloning this repository, and using the provided Makefile to build the Docker image yourself:
+>
+> ```bash
+> git clone https://github.com/codepath/opencyber-password-lab.git
+> cd opencyber-password-lab
+> make build
+> make student
+> ```
