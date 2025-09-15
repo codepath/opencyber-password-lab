@@ -23,7 +23,7 @@ echo "GETTING STARTED:"
 echo -e " ${g}*${n} John is already installed (use 'john' to run)."
 echo -e " ${g}*${n} Provided files are in ~/ (use 'ls -l' to view)."
 echo -e " ${g}*${n} Follow along with the instructions at:"
-echo -e "\thttps://example.com/example-lab-instructions"
+echo -e "\thttps://github.com/codepath/opencyber-password-lab"
 echo
 
 # Hand off to whatever the user specifies (default = bash)
