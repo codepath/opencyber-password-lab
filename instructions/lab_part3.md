@@ -27,7 +27,6 @@ For this challenge, you'll be working with a (fictional) **leaked password file*
 
 Your task is simple: Crack as many hashes as possible, so those passwords can be removed from production and those users' accounts secured.
 
-
 > [!IMPORTANT]
 > To help guide your cracking efforts, you've been provided with some metadata about the leaked passwords. This metadata can help you prioritize your cracking efforts by focusing on the most common password lengths and likely words used.
 >
@@ -42,14 +41,13 @@ Your task is simple: Crack as many hashes as possible, so those passwords can be
 > [!TIP]
 > To check how many passwords you've cracked so far, run `john --show part3/password_leak.txt`
 
+### How to Succeed
 
 > [!WARNING]
-> This challenge is designed to be difficult, and getting 100% of the passwords cracked is not expected!
+> This challenge is designed to be difficult, and getting 100% of the passwords cracked is not expected:
+> Cracking 25% is still considered a significant achievement!
 > 
 > That said, if you do manage this extremely tricky task... you'll win some serious bragging rights. 😎
-
-
-### How to Succeed
 
 - **Utilize wordlists**: Just using `lower.lst` isn't going to be enough here, you'll need to find and use larger, more comprehensive wordlists for this one.
 - **Apply rulesets**: John comes with built-in rulesets you can apply. You can list them with a command like: `grep -E "^\[List.Rules" /opt/john/run/john.conf`

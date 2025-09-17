@@ -87,10 +87,10 @@ $ echo -n theusername: ; mkpasswd -m sha-512 thepassword
 > [!TIP]
 > You can save the output of the `mkpasswd` commands directly into a file you wish to use John on! For example, `echo -n theusername: ; mkpasswd -m md5 thepassword > mypasswords.txt`
 
-> [!CAUTION]
-> Using your own passwords here could expose them!
->
-> Instead, try substituting a similar password to see how crackable yours is -- for example, if your passwords is `fish29`, try another 4-letter 2-number password, like `lamp36`.
+- Be mindful of security risks before using your own passwords here.
+
+> [!TIP]
+> Instead of risking your own password, try substituting a similar password to see how crackable yours is -- for example, if your passwords is `fish29`, try another 4-letter 2-number password, like `lamp36`.
 
 MD5, SHA-256, and SHA-512 are different hash algorithms that you might find in these types of password files. They can coexist in the same file so go ahead, copy several lines with different hash mechanisms, usernames and passwords and try a few and see if John is able to crack them.
 

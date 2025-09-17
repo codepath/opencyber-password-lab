@@ -40,10 +40,3 @@ In the provided Docker container, you will find all the necessary tools and depe
 - `unzip` - A utility for extracting compressed files
 
 In addition, you may use built-in commands such as `ls`, `cd`, and `cat` to navigate and manipulate files within the container.
-
-### Provided Files
-
-You'll find the following files in your lab environment:
-
-- `crackfiles.zip` - A ZIP archive containing simulated password files to crack
-- `password_leak.txt` - A text file of a simulated "password leak", containing hashes for 1000 passwords to crack

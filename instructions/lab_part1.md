@@ -24,7 +24,7 @@ Lab Parts:
 ### Step 0: The "What" and "Why" of password hashes
 
 > [!NOTE]
-> This section provides key background information the importance of password hashing and the risks of storing passwords in plain text. The actual lab instructions begin in Step 1.
+> This section provides key background information about the importance of password hashing and the risks of storing passwords in plain text. The actual lab instructions begin in Step 1.
 
 Let's say you are the lead developer of PathCode.com, a social media website. When users sign up, they create a password. They expect to be able to use this password to log in, over and over again.
 
@@ -61,7 +61,7 @@ You calculate the hash for `chinchillaEnemy42`, which hashes to `29da`. Then you
 
 Since `29da` isn't the same as `6ccf`, you now know I **didn't send the correct password** -- even though you didn't store my actual password!
 
->[!IMPORTANT]
+> [!IMPORTANT]
 > Passwords are stored as hashes, not plain text. To determine if a user entered their password correctly, you must hash the entered password and compare it to the stored hash.
 
 ### Step 1: Exploring the password files
@@ -76,14 +76,12 @@ Alright, let's get started!
 
 As you can probably guess, all of the `crack_x` files are password files! To look at them, you can use the `less` command.  
 
-- [ ] Try using `less crack_a.txt` to view the first password file.  What do you think the fields mean?
+- [ ] Try using `less part1/crack_a.txt` to view the first password file.  What do you think the fields mean?
 
 > [!TIP]
 > Press the `q` key to exit the `less` screen and return to your terminal.
 
-The other file, `lower.lst`, is a wordlist file... we'll get to that in the next step.
-
-🎯 **Checkpoint 1.2**: We can view our individual password files and are ready to start cracking!
+🎯 **Checkpoint 1.2**: We can view our individual password files with `less`.
 
 > [!CAUTION]
 > Cracking password hashes can be illegal and unethical. Always have permission before attempting to crack any passwords.
@@ -133,17 +131,17 @@ Now that you're in there you can actually do some searching with the `&` key.
   ... //etc
 ```
 
-Now it's your turn!'
+Now it's your turn!
 
 - [ ] Try out some other options and explore what sorts of passwords people thought were secure at one time or another.
 
 > [!CAUTION]
 > If you choose to search for your own password, make sure no one else can see your screen!  
 
-> [!NOTE]
-> For this lab, we're not going to use `rockyou.txt`.  Why?  Because it's **big**, and takes a **long time** to run.  Instead, we'll use a much smaller wordlist, the provided `lower.lst`.  Feel free to check it out too with `less -N wordlists/lower.lst`!
-
 🎯 **Checkpoint 2**: We know where our wordlists are, and have taken a peek inside them!
+
+> [!NOTE]
+> For this part, we're not going to use `rockyou.txt`.  Why?  Because it's **big**, and takes a **long time** to run.  Instead, we'll use a much smaller wordlist, the provided `lower.lst`.  Feel free to check it out too with `less -N wordlists/lower.lst`!
 
 ### Step 3: Cracking passwords with John
 
@@ -183,7 +181,7 @@ waterSquirtle    (squirtle)
 ```
 
 > [!IMPORTANT]
-> When you run commands, you have to specify the **path** to find each file. So if you want to run John against `crack_a.txt`, and you're in your home directory `~`, you have to use `part1/crack_a.txt`. If you've `cd`'d into the `part1` directory, you can just use `crack_a.txt`. If you're unsure where you are, you can use `pwd`, or just run `cd ~` to return to your home directory.
+> When you run commands, you have to specify the **path** to find each file. So if you want to run John against `crack_a.txt`, and you're in your home directory (`/home/student` or `~` for short), you have to use `part1/crack_a.txt`. If you've `cd`'d into the `part1` directory, you can just use `crack_a.txt`. If you're unsure where you are, you can use `pwd`, or just run `cd ~` to return to your home directory.
 
 🎯 **Checkpoint 3**: You should have successfully all three pokemon's passwords!   Run `john --show part1/crack_a.txt` to view them.
 
@@ -256,8 +254,7 @@ For more information on masking, check out: https://www.openwall.com/john/doc/RU
 > John auto-saves where it is in it's guessing scheme every 10 minutes by default.
 > If you stop it mid-way, it will attempt to save its place so you can resume later, which can take some time. If you want it to stop quickly, and don't care if it saves your place, you can hit <kbd>Ctrl</kbd>-<kbd>C</kbd> TWICE to force John to exit.
 
-> [!IMPORTANT]
-> You've completed Part 1 of the Password Security Lab!
+You've completed Part 1 of the Password Security Lab!
 
 ### Extra Info
 
