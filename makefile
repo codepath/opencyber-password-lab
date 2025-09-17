@@ -1,5 +1,5 @@
 # Image names
-IMAGE_NAME=opencyber-password-lab:latest
+IMAGE_NAME=opencyber-password-lab
 
 # Default target: build the final image
 all: student
