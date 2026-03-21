@@ -52,6 +52,7 @@ Your task is simple: Crack as many hashes as possible, so those passwords can be
 - **Utilize wordlists**: Just using `lower.lst` isn't going to be enough here, you'll need to find and use larger, more comprehensive wordlists for this one.
 - **Apply rulesets**: John comes with built-in rulesets you can apply. You can list them with a command like: `grep -E "^\[List.Rules" /opt/john/run/john.conf`
 - **Use masks**: Try using masks to specify patterns for the passwords you're trying to crack. For example, you could use a mask like `--mask='?l?l?l?l?l?l'` to target 6-character lowercase passwords.
+  - Note: `?v` (vowels) is not supported with `--mask=`. Use `[aeiou]` instead — e.g., `--mask='?l?l?l[aeiou]'`.
 - **Don't wait forever**: If you find a command is taking too long, don't hesitate to stop it and try a different approach. (It's possible reach the required 250 cracks in 30 minutes or less!)
 - **Leverage AI tools**: Consider using AI tools to help you analyze the password patterns and suggest cracking strategies.
   - Try asking ChatGPT to help you read through [the John docs](https://www.openwall.com/john/doc/RULES.shtml) and identify useful rules and strategies.
