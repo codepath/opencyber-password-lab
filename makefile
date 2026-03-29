@@ -14,7 +14,7 @@ student:
 
 # Run an interactive container from the final image
 run:
-	docker run --rm -it $(IMAGE_NAME):local
+	docker run --rm -it -v password-lab-data:/home/student $(IMAGE_NAME):local
 
 # Clean up dangling images (optional)
 clean:
@@ -22,4 +22,8 @@ clean:
 
 # Run the image from GitHub Container Registry
 ghcr:
-	docker run --rm -it ghcr.io/codepath/$(IMAGE_NAME):latest
+	docker run --rm -it -v password-lab-data:/home/student ghcr.io/codepath/$(IMAGE_NAME):latest
+
+# Build and push to GitHub Container Registry (requires docker login ghcr.io)
+push:
+	docker buildx build --platform linux/amd64,linux/arm64 -t ghcr.io/codepath/$(IMAGE_NAME):latest -f docker/Dockerfile --push .

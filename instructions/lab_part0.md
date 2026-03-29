@@ -32,11 +32,25 @@ Follow these steps to set up your lab environment:
   - **Windows**: Open **Command Prompt** or **PowerShell** (search either in the Start menu)
   - **Linux**: Open your system's terminal emulator
 
-- [ ] Run the Lab container with `docker run --rm -it ghcr.io/codepath/opencyber-password-lab:latest`
+- [ ] Run the Lab container with:
+
+  ```bash
+  docker run --rm -it -v password-lab-data:/home/student ghcr.io/codepath/opencyber-password-lab:latest
+  ```
 
 At this point, you should see a `student@...~$` prompt, indicating that you are inside the Docker container.
 
 If so, you are ready to [**proceed to Part 1**](./lab_part1.md).
+
+> [!IMPORTANT]
+> Your cracking progress and any wordlists you download **persist between sessions** via the named volume. If you stop the container and restart it later, John will remember which passwords it has already cracked.
+
+> [!TIP]
+> If you want to reset the lab and start fresh, stop the container and run:
+> ```bash
+> docker volume rm password-lab-data
+> ```
+> The next time you run `docker run`, a new empty volume will be created automatically.
 
 > [!TIP]
 > If you have issues pulling the image, you can build it manually by cloning this repository and running:
@@ -44,7 +58,6 @@ If so, you are ready to [**proceed to Part 1**](./lab_part1.md).
 > ```bash
 > git clone https://github.com/codepath/opencyber-password-lab.git
 > cd opencyber-password-lab
-> docker build --target john-builder -f docker/Dockerfile .
 > docker build -t opencyber-password-lab:local -f docker/Dockerfile .
-> docker run --rm -it opencyber-password-lab:local
+> docker run --rm -it -v password-lab-data:/home/student opencyber-password-lab:local
 > ```

@@ -41,7 +41,7 @@ Your task is simple: Crack as many hashes as possible, so those passwords can be
 > [!TIP]
 > To check how many passwords you've cracked so far, run `john --show part3/password_leak.txt`
 
-### How to Succeed
+### Tips for Success
 
 > [!WARNING]
 > This challenge is designed to be difficult, and getting 100% of the passwords cracked is not expected:
