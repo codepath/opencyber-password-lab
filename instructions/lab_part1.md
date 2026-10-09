@@ -210,11 +210,11 @@ Ugh.... this is taking FOREVER.  What if my laptop dies, I have something else t
 If all goes well, you should crack one of the passwords!  (Oh, Jim...)  But there are three passwords in the file.  To get the other passwords, we'll need to add some *mangling rules*:
 
 **🔑 Dwight** used some [l33tspeak](https://en.wikipedia.org/wiki/Leet), which we can check for with `--rules=l33t`
-- [ ] `john --wordlist=lower.lst part1/crack_b.txt --rules=l33t`
+- [ ] `john --wordlist=wordlists/lower.lst part1/crack_b.txt --rules=l33t`
   - Once it cracks, go ahead and stop `john`.
 
 **🔑 Pam** tried mixing up her lower and upper case letters.  
-- [ ] `john --wordlist=lower.lst part1/crack_b.txt --rules=shifttoggle`
+- [ ] `john --wordlist=wordlists/lower.lst part1/crack_b.txt --rules=shifttoggle`
   - Sneaky, Pam, but we still got it!
 
 🎯 **Checkpoint 4**: You should have successfully cracked Jim, Dwight, and Pam's passwords!   Run `john --show part1/crack_b.txt` to view them.
@@ -243,7 +243,7 @@ Have you ever tried to guess someone's PIN number by just trying things? *1111, 
 
 <details> 
   <summary>💡 Stuck?</summary>
-  Try this:  `john --mask=?l?l?l?l?d! crack_c.txt`
+  Try this:  `john --mask=?l?l?l?l?d! part1/crack_c.txt`
 </details>
 
 🎯 **Checkpoint 5**: You should have successfully cracked all the games' passwords!   Run `john --show part1/crack_c.txt` to view them.

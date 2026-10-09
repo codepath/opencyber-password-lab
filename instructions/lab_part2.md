@@ -53,7 +53,7 @@ You should make an honest effort first, but if you've been stuck for more than 2
 
 <details> 
   <summary>🐶 Kitty (hard)</summary>
-  You still want to use `lower.list`, but you'll need a `--rules` flag...  
+  You still want to use `lower.lst`, but you'll need a `--rules` flag...  
 </details>
 
 <details> 
