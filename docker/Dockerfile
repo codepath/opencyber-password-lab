@@ -16,7 +16,7 @@ WORKDIR /opt
 RUN wget https://github.com/openwall/john/archive/bleeding-jumbo.tar.gz && \
     tar xzf bleeding-jumbo.tar.gz && rm bleeding-jumbo.tar.gz && \
     mv john-bleeding-jumbo john && cd john/src && \
-    ./configure --disable-native-arch && \
+    ./configure --disable-native-tests && \
     make -s clean && make -sj"$(nproc)"
 
 # ------ FINAL IMAGE --------
