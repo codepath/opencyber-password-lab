@@ -26,5 +26,24 @@ echo -e " ${g}*${n} Follow along with the instructions at:"
 echo -e "\thttps://github.com/codepath/opencyber-password-lab"
 echo
 
+# Keep John's session files in the home volume, so cracked passwords
+# (john.pot) and interrupted sessions (john.rec, for `john --restore`)
+# survive a container restart. John writes them to /opt/john/run, which is
+# outside the volume, so link each one to ~/.john. This runs on every start,
+# so it also covers volumes created before this change.
+mkdir -p "$HOME/.john"
+for f in john.pot john.log john.rec; do
+  ln -sfn "$HOME/.john/$f" "/opt/john/run/$f"
+done
+
 # Hand off to whatever the user specifies (default = bash)
-exec "$@"
+status=0
+"$@" || status=$?
+
+# John deletes john.rec (here, the link) when a session finishes. If the link
+# is gone, that session is done, so drop its saved copy too; otherwise a later
+# `john --restore` would rerun a finished session.
+if [ ! -L /opt/john/run/john.rec ]; then
+  rm -f "$HOME/.john/john.rec"
+fi
+exit "$status"
